@@ -63,6 +63,16 @@ namespace reakce_na_zátěžové_situace_markII.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _200w__1_ {
+            get {
+                object obj = ResourceManager.GetObject("200w (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _96633009_d1818000_1318_11eb_9f1d_7f914f4ccb16 {
             get {
                 object obj = ResourceManager.GetObject("96633009-d1818000-1318-11eb-9f1d-7f914f4ccb16", resourceCulture);
@@ -83,6 +93,26 @@ namespace reakce_na_zátěžové_situace_markII.Properties {
         /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icegif_1075 {
+            get {
+                object obj = ResourceManager.GetObject("icegif-1075", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icegif_503 {
+            get {
+                object obj = ResourceManager.GetObject("icegif-503", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lucy_orangutan {
             get {
                 object obj = ResourceManager.GetObject("lucy-orangutan", resourceCulture);
@@ -96,6 +126,16 @@ namespace reakce_na_zátěžové_situace_markII.Properties {
         internal static System.Drawing.Bitmap minions_gifs {
             get {
                 object obj = ResourceManager.GetObject("minions-gifs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pointing_laughing_hahaha {
+            get {
+                object obj = ResourceManager.GetObject("pointing-laughing-hahaha", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

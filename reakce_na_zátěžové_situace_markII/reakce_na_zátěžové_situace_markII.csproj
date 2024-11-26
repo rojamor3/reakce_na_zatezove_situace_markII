@@ -81,6 +81,9 @@
     <EmbeddedResource Include="Level2Control.resx">
       <DependentUpon>Level2Control.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Level3Control.resx">
+      <DependentUpon>Level3Control.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -115,6 +118,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lucy-orangutan.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icegif-503.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pointing-laughing-hahaha.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icegif-1075.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\200w %281%29.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
