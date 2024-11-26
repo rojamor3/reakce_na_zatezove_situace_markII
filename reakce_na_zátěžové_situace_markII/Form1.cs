@@ -16,48 +16,68 @@ namespace reakce_na_zátěžové_situace_markII
         {
             InitializeComponent();
 
-            Point initialLocation = this.Location;
+            this.TopMost = true;
+            this.WindowState = FormWindowState.Maximized; // Okno bude vždy maximalizované
+            // Zamezit zavření okna
+
 
             int pocet_pokusu = 0;
-
-            this.TopMost = true;
-            this.MinimizeBox = false;
-            this.label1.Text = $"Pocet pokusů: {pocet_pokusu.ToString()}";
-            //this.FormBorderStyle = FormBorderStyle.None; // Skryje tlačítka zavření, minimalizace a maximalizace
-            this.WindowState = FormWindowState.Maximized; // Okno bude vždy maximalizované
-
-
-            // Zamezit zavření okna
             this.FormClosing += (sender, e) =>
             {
-                if (pocet_pokusu < 3)
+                if (pocet_pokusu < -1)
                 {
-                    pocet_pokusu++;
                     e.Cancel = true;    // Zamezí zavření aplikace
-                    this.label1.Text = $"Pocet pokusů: {pocet_pokusu.ToString()}" ;
+                    pocet_pokusu++;
                 }
             };
 
-            this.Move += (sender, e) =>
+            //***********__Main část__***********
+
+            ShowUserControl(new Level1Control());
+
+
+
+
+
+
+
+
+
+        }
+
+        private void ShowUserControl(UserControl control)
+        {
+            panel1.Controls.Clear(); // Odstraní aktuální obsah panelu
+            control.Dock = DockStyle.Fill; // Upraví velikost na celý panel
+            panel1.Controls.Add(control); // Přidá nový UserControl
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_SYSCOMMAND = 0x0112; // Zpráva pro systémové příkazy
+            const int SC_MINIMIZE = 0xF020;   // Minimalizace
+            const int SC_RESTORE = 0xF120;   // Obnovení okna
+
+            if (m.Msg == WM_SYSCOMMAND &&
+                (m.WParam.ToInt32() == SC_MINIMIZE || m.WParam.ToInt32() == SC_RESTORE))
             {
-                // Po každém pohybu okna ho vrátíme na původní pozici
-                this.Location = initialLocation;
-            };
+                // Zamezení minimalizace nebo obnovení z maximalizovaného stavu
+                return;
+            }
+
+            base.WndProc(ref m);
         }
 
-        private void Form1_SizeChanged(object sender, EventArgs e)
+        // Neustálé maximalizování okna
+        protected override void OnResize(EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-        }
+            base.OnResize(e);
 
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void Form1_Move(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
+            // Pokud by uživatel přesto změnil velikost, obnovíme maximalizovaný stav
+            if (this.WindowState != FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
     }
 }
