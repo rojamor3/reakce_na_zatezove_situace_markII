@@ -32,16 +32,15 @@ namespace reakce_na_zátěžové_situace_markII
             };
 
             //***********__Main část__***********
-
-            ShowUserControl(new Level1Control());
-
-
-
+            var Level1 = new Level1Control();
+            var Level2 = new Level2Control();
+            var Level3 = new Level3Control();
 
 
-
-
-
+            ShowUserControl(Level1);
+            Level1.GoToNextLevel += (s, e) => ShowUserControl(Level2); // Nahradí panel obsahem Level2Control
+            Level2.GoToNextLevel += (s, e) => ShowUserControl(Level3);          
+             
 
         }
 
@@ -51,6 +50,8 @@ namespace reakce_na_zátěžové_situace_markII
             control.Dock = DockStyle.Fill; // Upraví velikost na celý panel
             panel1.Controls.Add(control); // Přidá nový UserControl
         }
+
+
 
         protected override void WndProc(ref Message m)
         {

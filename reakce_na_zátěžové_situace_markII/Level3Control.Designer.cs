@@ -1,6 +1,6 @@
 ﻿namespace reakce_na_zátěžové_situace_markII
 {
-    partial class UserControl2
+    partial class Level3Control
     {
         /// <summary> 
         /// Vyžaduje se proměnná návrháře.
@@ -28,15 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // UserControl2
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "UserControl2";
-            this.ResumeLayout(false);
-
         }
 
         #endregion

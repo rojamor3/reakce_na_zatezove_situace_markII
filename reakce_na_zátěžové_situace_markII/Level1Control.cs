@@ -26,7 +26,7 @@ namespace reakce_na_zátěžové_situace_markII
             label1.Font = new Font(label1.Font.FontFamily, this.Width / 25); // Velikost textu label1
             label2.Font = new Font(label2.Font.FontFamily, this.Width / 35); // Velikost textu label2
 
-
+            button1.Click += (s, e) => GoToNextLevel?.Invoke(this, EventArgs.Empty);
 
         }
     }

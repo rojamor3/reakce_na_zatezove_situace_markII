@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace reakce_na_zátěžové_situace_markII
 {
-    public partial class UserControl2 : UserControl
+    public partial class Level2Control : UserControl
     {
-        public UserControl2()
+        public event EventHandler GoToNextLevel;
+        public Level2Control()
         {
             InitializeComponent();
+
+            button1.Click += (s, e) => GoToNextLevel?.Invoke(this, EventArgs.Empty);
         }
     }
 }
