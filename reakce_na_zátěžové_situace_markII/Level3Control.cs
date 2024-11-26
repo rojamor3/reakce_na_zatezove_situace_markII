@@ -42,22 +42,36 @@ namespace reakce_na_zátěžové_situace_markII
 
         private void ParentForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Přejete si odejít?", "Potvrzení", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (pocet_pokusu < 3)
+            {
+                DialogResult result = MessageBox.Show("Přejete si odejít?", "Potvrzení", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Zpracování odpovědi uživatele
-            if (result == DialogResult.Yes)
+                // Zpracování odpovědi uživatele
+                if (result == DialogResult.Yes)
+                {
+                    pocet_pokusu++;
+                }
+                else if (result == DialogResult.No)
+                {
+                    // Akce při volbě "Ne" (např. nic neudělá)
+                    MessageBox.Show("Díky, že zůstáváte s námi, skupina ČEZ.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            } 
+            else
             {
                 pocet_pokusu++;
             }
-            else if (result == DialogResult.No)
+
+            if (pocet_pokusu == 1)
             {
-                // Akce při volbě "Ne" (např. nic neudělá)
-                MessageBox.Show("Díky, že zustáváte s námi, skupina ČEZ.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                label2.Text = "Nevzdávej se! Věřím ti.";
+                label2.Visible = true;
             }
 
             if (pocet_pokusu == 3)
             {
-                label2.Visible = true;
+                label2.Text = "Nejde to, co? xD\r\n";
+
                 pictureBox1.Visible = true; pictureBox2.Visible = true;
                 show_counter = true;
             }

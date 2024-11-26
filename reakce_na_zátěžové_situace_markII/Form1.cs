@@ -20,7 +20,6 @@ namespace reakce_na_zátěžové_situace_markII
             this.WindowState = FormWindowState.Maximized; // Okno bude vždy maximalizované
 
             bool closing_var = true;
-            int pocet_pokusu = 0;
             this.FormClosing += (sender, e) =>
             {
                 e.Cancel = closing_var;    // Zamezí zavření aplikace
