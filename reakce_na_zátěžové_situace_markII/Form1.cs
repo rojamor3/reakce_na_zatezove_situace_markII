@@ -18,7 +18,6 @@ namespace reakce_na_zátěžové_situace_markII
 
             this.TopMost = true;
             this.WindowState = FormWindowState.Maximized; // Okno bude vždy maximalizované
-            // Zamezit zavření okna
 
 
             int pocet_pokusu = 0;
@@ -39,7 +38,7 @@ namespace reakce_na_zátěžové_situace_markII
 
             ShowUserControl(Level1);
             Level1.GoToNextLevel += (s, e) => ShowUserControl(Level2); // Nahradí panel obsahem Level2Control
-            Level2.GoToNextLevel += (s, e) => ShowUserControl(Level3);          
+            Level2.GoToNextLevel += (s, e) => { ShowUserControl(Level3); this.FormBorderStyle = FormBorderStyle.FixedSingle; };    
              
 
         }
