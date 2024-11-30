@@ -16,11 +16,10 @@ namespace reakce_na_zátěžové_situace_markII
         {
             InitializeComponent();
 
-            this.TopMost = true;
+            this.TopMost = false ;
             this.WindowState = FormWindowState.Maximized; // Okno bude vždy maximalizované
 
-            bool closing_var = true;
-            int pocet_pokusu = 0;
+            bool closing_var = true ;
             this.FormClosing += (sender, e) =>
             {
                 e.Cancel = closing_var;    // Zamezí zavření aplikace

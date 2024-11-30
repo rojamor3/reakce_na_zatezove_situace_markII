@@ -19,9 +19,14 @@ namespace reakce_na_zátěžové_situace_markII
             InitializeComponent();
 
             button1.FlatStyle = FlatStyle.Flat; // Nastaví styl tlačítka na plochý
+            button2.FlatStyle = FlatStyle.Flat; // Nastaví styl tlačítka na plochý
             button1.FlatAppearance.BorderSize = 2; // Nastaví tloušťku rámečku
+            button2.FlatAppearance.BorderSize = 2; // Nastaví tloušťku rámečku
             button1.FlatAppearance.BorderColor = Color.FromArgb(55, 55, 55); // Nastaví barvu rámečku
+            button2.FlatAppearance.BorderColor = Color.FromArgb(55, 55, 55); // Nastaví barvu rámečku
             button1.Font = new Font(button1.Font.FontFamily, button1.Width / 10); // Velikost písma tlačítka
+            button2.Font = new Font(button2.Font.FontFamily, button1.Width / 10); // Velikost písma tlačítka
+
 
             label1.Font = new Font(label1.Font.FontFamily, this.Width / 25); // Velikost textu label1
             label2.Font = new Font(label2.Font.FontFamily, this.Width / 35); // Velikost textu label2
