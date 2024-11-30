@@ -42,7 +42,7 @@ namespace reakce_na_zátěžové_situace_markII
 
         private void ParentForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (pocet_pokusu < 3)
+            if (pocet_pokusu < 1)
             {
                 DialogResult result = MessageBox.Show("Přejete si odejít?", "Potvrzení", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 // Zpracování odpovědi uživatele
@@ -67,14 +67,16 @@ namespace reakce_na_zátěžové_situace_markII
                 label2.Visible = true;
                 pictureBox1.Visible = true; pictureBox2.Visible = true;
                 show_counter = true;
+                label2.Text = "Ale snažíš se a to se počítá!";
+
             }
             if (show_counter)
                 label1.Text = $"Počet pokusů: {pocet_pokusu}";
 
 
             if (pocet_pokusu == 5)
-                label2.Text = "Ale snažíš se a to se počítá!";
-            if (pocet_pokusu == 8)
+                label2.Text = "Nejde to, co? XD";
+            if (pocet_pokusu == 7)
                 label2.Text = "A jednou to třeba i vyjde...";
 
             if (pocet_pokusu == 10)

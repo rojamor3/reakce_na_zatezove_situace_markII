@@ -34,5 +34,25 @@ namespace reakce_na_zátěžové_situace_markII
             button1.Click += (s, e) => GoToNextLevel?.Invoke(this, EventArgs.Empty);
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Šupáku neštvi a řekni, že se bojíš! \n Nebo snad potřebuješ přesvědčit?",           // Text zprávy
+                "",                        // Titulek okna
+                MessageBoxButtons.YesNo,    // Tlačítka
+                MessageBoxIcon.Warning,           // Ikona
+                MessageBoxDefaultButton.Button2  // Výchozí tlačítko
+            );
+
+            if (result == DialogResult.Yes)
+            {
+            }
+            else
+            {
+                // Kód pro zamítnutí akce
+                MessageBox.Show("Akce zrušena.");
+            }
+        }
     }
 }
