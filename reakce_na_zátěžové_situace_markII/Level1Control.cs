@@ -13,6 +13,8 @@ namespace reakce_na_zátěžové_situace_markII
     public partial class Level1Control : UserControl
     {
         public event EventHandler GoToNextLevel;
+        public event EventHandler OpenSubLevel;
+
 
         public Level1Control()
         {
@@ -33,6 +35,7 @@ namespace reakce_na_zátěžové_situace_markII
 
             button1.Click += (s, e) => GoToNextLevel?.Invoke(this, EventArgs.Empty);
 
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -47,6 +50,7 @@ namespace reakce_na_zátěžové_situace_markII
 
             if (result == DialogResult.Yes)
             {
+                OpenSubLevel?.Invoke(this, EventArgs.Empty);
             }
             else
             {

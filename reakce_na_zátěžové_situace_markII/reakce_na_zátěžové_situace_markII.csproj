@@ -58,6 +58,12 @@
     <Compile Include="Level1Control.Designer.cs">
       <DependentUpon>Level1Control.cs</DependentUpon>
     </Compile>
+    <Compile Include="Level1Control_vystraha.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Level1Control_vystraha.Designer.cs">
+      <DependentUpon>Level1Control_vystraha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Level2Control.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Level1Control.resx">
       <DependentUpon>Level1Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Level1Control_vystraha.resx">
+      <DependentUpon>Level1Control_vystraha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Level2Control.resx">
       <DependentUpon>Level2Control.cs</DependentUpon>
@@ -130,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\200w %281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\christmas-cheer.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

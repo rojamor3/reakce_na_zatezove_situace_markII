@@ -27,13 +27,17 @@ namespace reakce_na_zátěžové_situace_markII
 
             //***********__Main část__***********
             var Level1 = new Level1Control();
+            var Level1_1 = new Level1Control_vystraha();
             var Level2 = new Level2Control();
             var Level3 = new Level3Control();
 
 
             ShowUserControl(Level1);
             Level1.GoToNextLevel += (s, e) => ShowUserControl(Level2); // Nahradí panel obsahem Level2Control
+            Level1.OpenSubLevel += (s, e) => ShowUserControl(Level1_1); // Nahradí panel obsahem Level2Control
+ 
             Level2.GoToNextLevel += (s, e) => { ShowUserControl(Level3); this.FormBorderStyle = FormBorderStyle.FixedSingle; };
+
             Level3.Form_Closing += (s, e) => { closing_var = !closing_var; };
 
 
