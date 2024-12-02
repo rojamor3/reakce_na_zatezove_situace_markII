@@ -13,12 +13,27 @@ namespace reakce_na_zátěžové_situace_markII
 {
     public partial class Level1Control_vystraha : UserControl
     {
+        public event EventHandler CloseSubLevel;
         public Level1Control_vystraha()
         {
             InitializeComponent();
+            button1.FlatAppearance.BorderSize = 3; // Nastaví tloušťku rámečku
+            button1.FlatAppearance.BorderColor = Color.FromArgb(150, 150, 150); // Nastaví barvu rámečku
+            button1.Font = new Font(button1.Font.FontFamily, button1.Width / 6); // Velikost písma tlačítka
+            label1.Font = new Font(label1.Font.FontFamily, this.Width / 20); // Velikost textu label1
+            label2.Font = new Font(label2.Font.FontFamily, this.Width / 33); // Velikost textu label1
+            label3.Font = new Font(label3.Font.FontFamily, this.Width / 16); // Velikost textu label1
+            label4.Font = new Font(label4.Font.FontFamily, this.Width / 50); // Velikost textu label1
+            label5.Font = new Font(label5.Font.FontFamily, this.Width / 45); // Velikost textu label1
+
+
+
+
+
 
             LoadLastDownloadedImage();
 
+            button1.Click += (s, e) => CloseSubLevel?.Invoke(this, EventArgs.Empty);
         }
 
         private void LoadLastDownloadedImage()
